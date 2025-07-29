@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:glass_panes",
+    "S": "minecraft:cherry_slab",
+    "T": "minecraft:cherry_trapdoor"
+  },
+  "pattern": [
+    "SSS",
+    "GTG",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:cherry_cabinet_with_glass_doors"
+  }
+}

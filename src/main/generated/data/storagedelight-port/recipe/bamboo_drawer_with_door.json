@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:bamboo_slab",
+    "B": "minecraft:bamboo_trapdoor"
+  },
+  "pattern": [
+    "AAA",
+    "BBB",
+    "ABA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:bamboo_drawer_with_door"
+  }
+}

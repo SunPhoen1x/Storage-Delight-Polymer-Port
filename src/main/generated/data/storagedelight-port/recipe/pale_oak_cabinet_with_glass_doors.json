@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:glass_panes",
+    "S": "minecraft:pale_oak_slab",
+    "T": "minecraft:pale_oak_trapdoor"
+  },
+  "pattern": [
+    "SSS",
+    "GTG",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:pale_oak_cabinet_with_glass_doors"
+  }
+}

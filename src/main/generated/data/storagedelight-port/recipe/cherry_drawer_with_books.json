@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:cherry_slab",
+    "B": "minecraft:cherry_trapdoor",
+    "C": "minecraft:bookshelf"
+  },
+  "pattern": [
+    "AAA",
+    "BBB",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:cherry_drawer_with_books"
+  }
+}

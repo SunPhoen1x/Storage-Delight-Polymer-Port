@@ -226,7 +226,7 @@ public class BlockRegistry {
     public static void registerBlocks() {
         ItemGroup.Builder builder = PolymerItemGroupUtils.builder();
         builder.icon(() -> new ItemStack(BlockRegistry.OAK_DRAWER_ITEM, 1));
-        builder.displayName(Text.translatable("itemGroup.storagedelight.blocks"));
+        builder.displayName(Text.translatable("itemGroup.storagedelight"));
 
         builder.entries((displayContext, entries) -> {
             entries.add(BlockRegistry.OAK_DRAWER_ITEM);

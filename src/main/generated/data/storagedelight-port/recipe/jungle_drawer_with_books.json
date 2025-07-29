@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:jungle_slab",
+    "B": "minecraft:jungle_trapdoor",
+    "C": "minecraft:bookshelf"
+  },
+  "pattern": [
+    "AAA",
+    "BBB",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:jungle_drawer_with_books"
+  }
+}

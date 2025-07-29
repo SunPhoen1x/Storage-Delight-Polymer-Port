@@ -3,6 +3,7 @@ package com.phoen1x;
 import com.phoen1x.registry.data.ModBlockTagProvider;
 import com.phoen1x.registry.data.ModLootTableProvider;
 import com.phoen1x.registry.data.ModModelProvider;
+import com.phoen1x.registry.data.ModRecipeProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -13,6 +14,7 @@ public class StorageDelightPortDataGenerator implements DataGeneratorEntrypoint 
 
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
 	}
 }

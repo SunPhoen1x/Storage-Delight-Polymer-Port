@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:glass_panes",
+    "S": "minecraft:warped_slab",
+    "T": "minecraft:warped_trapdoor"
+  },
+  "pattern": [
+    "SSS",
+    "TGT",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:glass_warped_cabinet"
+  }
+}

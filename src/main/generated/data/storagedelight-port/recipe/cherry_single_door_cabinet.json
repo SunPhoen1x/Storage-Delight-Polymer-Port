@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": "minecraft:cherry_slab",
+    "T": "minecraft:cherry_trapdoor"
+  },
+  "pattern": [
+    "SSS",
+    " T ",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:cherry_single_door_cabinet"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:dark_oak_slab",
+    "B": "minecraft:dark_oak_trapdoor"
+  },
+  "pattern": [
+    "AAA",
+    "BBB",
+    "ABA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:dark_oak_drawer_with_door"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bookshelf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bookshelf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_jungle_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:jungle_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "storagedelight-port:jungle_drawer_with_books"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jungle_slab",
+      "has_bookshelf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "storagedelight-port:jungle_drawer_with_books"
+    ]
+  }
+}

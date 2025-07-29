@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:crimson_slab",
+    "B": "minecraft:crimson_trapdoor",
+    "C": "minecraft:bookshelf"
+  },
+  "pattern": [
+    "AAA",
+    "BBB",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:crimson_drawer_with_books"
+  }
+}

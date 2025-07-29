@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:glass_panes",
+    "S": "minecraft:acacia_slab",
+    "T": "minecraft:acacia_trapdoor"
+  },
+  "pattern": [
+    "SSS",
+    "TGT",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagedelight-port:glass_acacia_cabinet"
+  }
+}
