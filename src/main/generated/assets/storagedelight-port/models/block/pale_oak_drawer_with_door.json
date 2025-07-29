@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "storagedelight-port:block/pale_oak_drawer_with_door_front",
+    "side": "storagedelight-port:block/pale_oak_cabinet_side",
+    "top": "storagedelight-port:block/pale_oak_cabinet_top"
+  }
+}

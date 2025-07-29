@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "storagedelight-port:block/jungle_bookshelf_with_door_front_open",
+    "side": "storagedelight-port:block/jungle_cabinet_side",
+    "top": "storagedelight-port:block/jungle_cabinet_top"
+  }
+}

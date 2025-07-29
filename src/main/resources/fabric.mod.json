@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "storagedelight-port",
+	"version": "${version}",
+	"name": "StorageDelight Port",
+	"description": "Polymer Port for Storage Delight.",
+	"authors": [
+		"Sun_Phoen1x"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/storagedelight-port/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.phoen1x.StorageDelightPort"
+		],
+		"fabric-datagen": [
+			"com.phoen1x.StorageDelightPortDataGenerator"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "storagedelight-port:block/small_birch_drawers_front",
+    "side": "storagedelight-port:block/birch_cabinet_side",
+    "top": "storagedelight-port:block/birch_cabinet_top"
+  }
+}

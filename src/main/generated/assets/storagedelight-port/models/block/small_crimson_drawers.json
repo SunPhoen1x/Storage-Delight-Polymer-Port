@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "storagedelight-port:block/small_crimson_drawers_front",
+    "side": "storagedelight-port:block/crimson_cabinet_side",
+    "top": "storagedelight-port:block/crimson_cabinet_top"
+  }
+}

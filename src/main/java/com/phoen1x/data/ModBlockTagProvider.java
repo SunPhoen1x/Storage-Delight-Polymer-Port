@@ -1,0 +1,118 @@
+package com.phoen1x.data;
+
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
+
+import java.util.concurrent.CompletableFuture;
+
+import static com.phoen1x.registry.BlockRegistry.*;
+
+public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+
+    public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
+        super(output, completableFuture);
+    }
+
+    @Override
+    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        valueLookupBuilder(BlockTags.AXE_MINEABLE)
+                .add(OAK_DRAWER)
+                .add(OAK_DRAWER_WITH_DOOR)
+                .add(OAK_DRAWER_WITH_BOOKS)
+                .add(SMALL_OAK_DRAWERS)
+                .add(OAK_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_OAK_CABINET)
+                .add(OAK_CABINET_WITH_GLASS_DOORS)
+                .add(OAK_SINGLE_DOOR_CABINET)
+                .add(BIRCH_DRAWER)
+                .add(BIRCH_DRAWER_WITH_DOOR)
+                .add(BIRCH_DRAWER_WITH_BOOKS)
+                .add(SMALL_BIRCH_DRAWERS)
+                .add(BIRCH_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_BIRCH_CABINET)
+                .add(BIRCH_CABINET_WITH_GLASS_DOORS)
+                .add(BIRCH_SINGLE_DOOR_CABINET)
+                .add(SPRUCE_DRAWER)
+                .add(SPRUCE_DRAWER_WITH_DOOR)
+                .add(SPRUCE_DRAWER_WITH_BOOKS)
+                .add(SMALL_SPRUCE_DRAWERS)
+                .add(SPRUCE_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_SPRUCE_CABINET)
+                .add(SPRUCE_CABINET_WITH_GLASS_DOORS)
+                .add(SPRUCE_SINGLE_DOOR_CABINET)
+                .add(JUNGLE_DRAWER)
+                .add(JUNGLE_DRAWER_WITH_DOOR)
+                .add(JUNGLE_DRAWER_WITH_BOOKS)
+                .add(SMALL_JUNGLE_DRAWERS)
+                .add(JUNGLE_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_JUNGLE_CABINET)
+                .add(JUNGLE_CABINET_WITH_GLASS_DOORS)
+                .add(JUNGLE_SINGLE_DOOR_CABINET)
+                .add(ACACIA_DRAWER)
+                .add(ACACIA_DRAWER_WITH_DOOR)
+                .add(ACACIA_DRAWER_WITH_BOOKS)
+                .add(SMALL_ACACIA_DRAWERS)
+                .add(ACACIA_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_ACACIA_CABINET)
+                .add(ACACIA_CABINET_WITH_GLASS_DOORS)
+                .add(ACACIA_SINGLE_DOOR_CABINET)
+                .add(DARK_OAK_DRAWER)
+                .add(DARK_OAK_DRAWER_WITH_DOOR)
+                .add(DARK_OAK_DRAWER_WITH_BOOKS)
+                .add(SMALL_DARK_OAK_DRAWERS)
+                .add(DARK_OAK_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_DARK_OAK_CABINET)
+                .add(DARK_OAK_CABINET_WITH_GLASS_DOORS)
+                .add(DARK_OAK_SINGLE_DOOR_CABINET)
+                .add(MANGROVE_DRAWER)
+                .add(MANGROVE_DRAWER_WITH_DOOR)
+                .add(MANGROVE_DRAWER_WITH_BOOKS)
+                .add(SMALL_MANGROVE_DRAWERS)
+                .add(MANGROVE_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_MANGROVE_CABINET)
+                .add(MANGROVE_CABINET_WITH_GLASS_DOORS)
+                .add(MANGROVE_SINGLE_DOOR_CABINET)
+                .add(CHERRY_DRAWER)
+                .add(CHERRY_DRAWER_WITH_DOOR)
+                .add(CHERRY_DRAWER_WITH_BOOKS)
+                .add(SMALL_CHERRY_DRAWERS)
+                .add(CHERRY_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_CHERRY_CABINET)
+                .add(CHERRY_CABINET_WITH_GLASS_DOORS)
+                .add(CHERRY_SINGLE_DOOR_CABINET)
+                .add(PALE_OAK_DRAWER)
+                .add(PALE_OAK_DRAWER_WITH_DOOR)
+                .add(PALE_OAK_DRAWER_WITH_BOOKS)
+                .add(SMALL_PALE_OAK_DRAWERS)
+                .add(PALE_OAK_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_PALE_OAK_CABINET)
+                .add(PALE_OAK_CABINET_WITH_GLASS_DOORS)
+                .add(PALE_OAK_SINGLE_DOOR_CABINET)
+                .add(BAMBOO_DRAWER)
+                .add(BAMBOO_DRAWER_WITH_DOOR)
+                .add(BAMBOO_DRAWER_WITH_BOOKS)
+                .add(SMALL_BAMBOO_DRAWERS)
+                .add(BAMBOO_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_BAMBOO_CABINET)
+                .add(BAMBOO_CABINET_WITH_GLASS_DOORS)
+                .add(BAMBOO_SINGLE_DOOR_CABINET)
+                .add(CRIMSON_DRAWER)
+                .add(CRIMSON_DRAWER_WITH_DOOR)
+                .add(CRIMSON_DRAWER_WITH_BOOKS)
+                .add(SMALL_CRIMSON_DRAWERS)
+                .add(CRIMSON_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_CRIMSON_CABINET)
+                .add(CRIMSON_CABINET_WITH_GLASS_DOORS)
+                .add(CRIMSON_SINGLE_DOOR_CABINET)
+                .add(WARPED_DRAWER)
+                .add(WARPED_DRAWER_WITH_DOOR)
+                .add(WARPED_DRAWER_WITH_BOOKS)
+                .add(SMALL_WARPED_DRAWERS)
+                .add(WARPED_BOOKSHELF_WITH_DOOR)
+                .add(GLASS_WARPED_CABINET)
+                .add(WARPED_CABINET_WITH_GLASS_DOORS)
+                .add(WARPED_SINGLE_DOOR_CABINET);
+    }
+}

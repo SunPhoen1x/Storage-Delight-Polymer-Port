@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "storagedelight-port:block/birch_cabinet_with_glass_doors_front_open",
+    "side": "storagedelight-port:block/birch_cabinet_side",
+    "top": "storagedelight-port:block/birch_cabinet_top"
+  }
+}
