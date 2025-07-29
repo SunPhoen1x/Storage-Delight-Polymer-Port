@@ -1,8 +1,8 @@
 package com.phoen1x;
 
-import com.phoen1x.data.ModBlockTagProvider;
-import com.phoen1x.data.ModLootTableProvider;
-import com.phoen1x.data.ModModelProvider;
+import com.phoen1x.registry.data.ModBlockTagProvider;
+import com.phoen1x.registry.data.ModLootTableProvider;
+import com.phoen1x.registry.data.ModModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 

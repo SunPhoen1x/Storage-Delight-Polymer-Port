@@ -7,7 +7,7 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
-public class LedgerSlot extends Slot{
+public class LedgerSlot extends Slot {
     public final ServerPlayerEntity player;
     public final BlockPos pos;
 
@@ -18,21 +18,22 @@ public class LedgerSlot extends Slot{
     }
 
     @Override
-    public void setStackNoCallbacks(ItemStack stack) {
-        if (!stack.isEmpty()) {
-            Util.ledgerMixinInvoke();
-        }
-        super.setStackNoCallbacks(stack);
+    public void setStack(ItemStack stack) {
+        super.setStack(stack);
+        this.markDirty();
     }
 
     @Override
     public void markDirty() {
         super.markDirty();
+        if (this.inventory != null) {
+            this.inventory.markDirty();
+        }
     }
 
     @Override
     public void onTakeItem(PlayerEntity player, ItemStack stack) {
-        Util.ledgerMixinInvoke();
         super.onTakeItem(player, stack);
+        this.markDirty();
     }
 }

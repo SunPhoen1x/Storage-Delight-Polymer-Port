@@ -1,4 +1,4 @@
-package com.phoen1x.data;
+package com.phoen1x.registry.data;
 
 import com.phoen1x.StorageDelightPort;
 import com.phoen1x.registry.BlockRegistry;

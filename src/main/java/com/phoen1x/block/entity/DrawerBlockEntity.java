@@ -78,9 +78,12 @@ public class DrawerBlockEntity extends LockableBlockEntity implements MinimalSid
 
         @Override
         protected boolean isPlayerViewing(PlayerEntity player) {
-            if (player.currentScreenHandler instanceof GenericContainerScreenHandler) {
-                return ((GenericContainerScreenHandler) player.currentScreenHandler).getInventory() == DrawerBlockEntity.this;
+            var handler = player.currentScreenHandler;
+            if (handler != null && !handler.slots.isEmpty()) {
+                var slotInventory = handler.slots.get(0).inventory;
+                return slotInventory == DrawerBlockEntity.this;
             }
+
             return false;
         }
     };
@@ -88,8 +91,8 @@ public class DrawerBlockEntity extends LockableBlockEntity implements MinimalSid
     @Override
     public void markDirty() {
         super.markDirty();
-        if (this.model != null) {
-            this.model.updateItems(this.getStacks());
+        if (this.world != null && !this.world.isClient) {
+            this.world.markDirty(this.pos);
         }
     }
 
@@ -112,9 +115,8 @@ public class DrawerBlockEntity extends LockableBlockEntity implements MinimalSid
     public void onListenerUpdate(WorldChunk chunk) {
         try {
             this.model = (DrawerBlock.Model) BlockAwareAttachment.get(chunk, this.getPos()).holder();
-            this.model.updateItems(this.getStacks());
         } catch (Throwable e) {
-            StorageDelightPort.LOGGER.debug("Error updating bookshelf model: ", e);
+            StorageDelightPort.LOGGER.debug("Error updating drawer model: ", e);
         }
     }
 
@@ -132,7 +134,7 @@ public class DrawerBlockEntity extends LockableBlockEntity implements MinimalSid
 
     @Override
     protected Text getContainerName() {
-        return Text.translatable("container.storagedelight.bookshelf_door");
+        return Text.translatable("container.storagedelight.drawer");
     }
 
     @Override
@@ -157,7 +159,7 @@ public class DrawerBlockEntity extends LockableBlockEntity implements MinimalSid
             super(ScreenHandlerType.GENERIC_9X3, player, false);
             this.setTitle(Text.translatable("container.storagedelight.drawer"));
             for (int i = 0; i < 27; i++) {
-                this.setSlotRedirect(i, new LedgerSlot(pos, player, DrawerBlockEntity.this, 1, 1, i));
+                this.setSlotRedirect(i, new LedgerSlot(pos, player, DrawerBlockEntity.this, i, 1, 1));
             }
             this.open();
         }

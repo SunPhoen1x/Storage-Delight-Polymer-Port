@@ -78,9 +78,12 @@ public class SmallDrawersBlockEntity extends LockableBlockEntity implements Mini
 
         @Override
         protected boolean isPlayerViewing(PlayerEntity player) {
-            if (player.currentScreenHandler instanceof GenericContainerScreenHandler) {
-                return ((GenericContainerScreenHandler) player.currentScreenHandler).getInventory() == SmallDrawersBlockEntity.this;
+            var handler = player.currentScreenHandler;
+            if (handler != null && !handler.slots.isEmpty()) {
+                var slotInventory = handler.slots.get(0).inventory;
+                return slotInventory == SmallDrawersBlockEntity.this;
             }
+
             return false;
         }
     };
@@ -88,8 +91,8 @@ public class SmallDrawersBlockEntity extends LockableBlockEntity implements Mini
     @Override
     public void markDirty() {
         super.markDirty();
-        if (this.model != null) {
-            this.model.updateItems(this.getStacks());
+        if (this.world != null && !this.world.isClient) {
+            this.world.markDirty(this.pos);
         }
     }
 
@@ -112,9 +115,8 @@ public class SmallDrawersBlockEntity extends LockableBlockEntity implements Mini
     public void onListenerUpdate(WorldChunk chunk) {
         try {
             this.model = (SmallDrawersBlock.Model) BlockAwareAttachment.get(chunk, this.getPos()).holder();
-            this.model.updateItems(this.getStacks());
         } catch (Throwable e) {
-            StorageDelightPort.LOGGER.debug("Error updating bookshelf model: ", e);
+            StorageDelightPort.LOGGER.debug("Error updating small drawers model: ", e);
         }
     }
 
@@ -157,7 +159,7 @@ public class SmallDrawersBlockEntity extends LockableBlockEntity implements Mini
             super(ScreenHandlerType.GENERIC_9X3, player, false);
             this.setTitle(Text.translatable("container.storagedelight.small_drawers"));
             for (int i = 0; i < 27; i++) {
-                this.setSlotRedirect(i, new LedgerSlot(pos, player, SmallDrawersBlockEntity.this, 1, 1, i));
+                this.setSlotRedirect(i, new LedgerSlot(pos, player, SmallDrawersBlockEntity.this, i, 1, 1));
             }
             this.open();
         }

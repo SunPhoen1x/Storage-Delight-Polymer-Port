@@ -128,8 +128,7 @@ public class DrawerBooksBlock extends BlockWithEntity implements FactoryBlock, I
     public static class Model extends BlockModel {
         private final ItemStack OPEN_FALSE;
         private final ItemStack OPEN_TRUE;
-        private final ItemDisplayElement drawer_books;
-        private final ItemDisplayElement[] items = new ItemDisplayElement[3];
+        private final ItemDisplayElement bookshelf;
         private final ServerWorld world;
         private final BlockPos pos;
 
@@ -139,41 +138,22 @@ public class DrawerBooksBlock extends BlockWithEntity implements FactoryBlock, I
             String blockName = blockId.getPath();
             this.OPEN_FALSE = ItemDisplayElementUtil.getModel(Identifier.of(StorageDelightPort.MOD_ID, "block/" + blockName));
             this.OPEN_TRUE = ItemDisplayElementUtil.getModel(Identifier.of(StorageDelightPort.MOD_ID, "block/" + blockName + "_open"));
-            this.drawer_books = state.get(OPEN) ? ItemDisplayElementUtil.createSimple(OPEN_TRUE) : ItemDisplayElementUtil.createSimple(OPEN_FALSE);
-            this.drawer_books.setScale(new Vector3f(2.0f));
+            this.bookshelf = state.get(OPEN) ? ItemDisplayElementUtil.createSimple(OPEN_TRUE) : ItemDisplayElementUtil.createSimple(OPEN_FALSE);
+            this.bookshelf.setScale(new Vector3f(2.0f));
             this.updateStatePos(state);
-            this.addElement(drawer_books);
+            this.addElement(bookshelf);
         }
 
         private void updateStatePos(BlockState state) {
             var direction = state.get(FACING);
             var yaw = direction.getPositiveHorizontalDegrees();
-            this.drawer_books.setYaw(yaw);
-            for (var item : this.items) {
-                if (item != null) {
-                    item.setYaw(yaw + 180);
-                    item.setPitch(-90f);
-                }
-            }
+            this.bookshelf.setYaw(yaw);
         }
 
         private void updateBookshelfModel(BlockState state) {
             ItemStack newModel = state.get(OPEN) ? OPEN_TRUE : OPEN_FALSE;
-            this.drawer_books.setItem(newModel);
-            this.drawer_books.tick();
-        }
-
-        public void setItem(int i, ItemStack stack) {
-            if (i < items.length) {
-                this.items[i].setItem(stack.copy());
-                this.items[i].tick();
-            }
-        }
-
-        public void updateItems(DefaultedList<ItemStack> stacks) {
-            for (int i = 0; i < Math.min(stacks.size(), items.length); i++) {
-                setItem(i, stacks.get(i));
-            }
+            this.bookshelf.setItem(newModel);
+            this.bookshelf.tick();
         }
 
         @Override

@@ -3,6 +3,7 @@ package com.phoen1x.block;
 import com.mojang.serialization.MapCodec;
 import com.phoen1x.StorageDelightPort;
 import com.phoen1x.block.entity.BookshelfDoorBlockEntity;
+import com.phoen1x.registry.BlockRegistry;
 import eu.pb4.factorytools.api.block.FactoryBlock;
 import eu.pb4.factorytools.api.virtualentity.BlockModel;
 import eu.pb4.factorytools.api.virtualentity.ItemDisplayElementUtil;
@@ -31,7 +32,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
@@ -125,6 +125,7 @@ public class BookshelfDoorBlock extends BlockWithEntity implements FactoryBlock,
         return true;
     }
 
+
     public static class Model extends BlockModel {
         private final ItemStack OPEN_FALSE;
         private final ItemStack OPEN_TRUE;
@@ -151,7 +152,8 @@ public class BookshelfDoorBlock extends BlockWithEntity implements FactoryBlock,
         }
 
         private void updateBookshelfModel(BlockState state) {
-            ItemStack newModel = state.get(OPEN) ? OPEN_TRUE : OPEN_FALSE;
+            boolean isOpen = state.get(OPEN);
+            ItemStack newModel = isOpen ? OPEN_TRUE : OPEN_FALSE;
             this.bookshelf.setItem(newModel);
             this.bookshelf.tick();
         }

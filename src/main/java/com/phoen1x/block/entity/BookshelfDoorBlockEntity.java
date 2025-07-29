@@ -16,7 +16,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -42,7 +41,6 @@ public class BookshelfDoorBlockEntity extends LockableBlockEntity implements Min
         }
     }
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
-    private BookshelfDoorBlock.Model model;
 
     public BookshelfDoorBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityTypesRegistry.BOOKSHELF_DOOR, pos, state);
@@ -78,9 +76,12 @@ public class BookshelfDoorBlockEntity extends LockableBlockEntity implements Min
 
         @Override
         protected boolean isPlayerViewing(PlayerEntity player) {
-            if (player.currentScreenHandler instanceof GenericContainerScreenHandler) {
-                return ((GenericContainerScreenHandler) player.currentScreenHandler).getInventory() == BookshelfDoorBlockEntity.this;
+            var handler = player.currentScreenHandler;
+            if (handler != null && !handler.slots.isEmpty()) {
+                var slotInventory = handler.slots.get(0).inventory;
+                return slotInventory == BookshelfDoorBlockEntity.this;
             }
+
             return false;
         }
     };
@@ -88,7 +89,8 @@ public class BookshelfDoorBlockEntity extends LockableBlockEntity implements Min
     @Override
     public void markDirty() {
         super.markDirty();
-        if (this.model != null) {
+        if (this.world != null && !this.world.isClient) {
+            this.world.markDirty(this.pos);
         }
     }
 
@@ -110,7 +112,7 @@ public class BookshelfDoorBlockEntity extends LockableBlockEntity implements Min
     @Override
     public void onListenerUpdate(WorldChunk chunk) {
         try {
-            this.model = (BookshelfDoorBlock.Model) BlockAwareAttachment.get(chunk, this.getPos()).holder();
+            BlockAwareAttachment.get(chunk, this.getPos());
         } catch (Throwable e) {
             StorageDelightPort.LOGGER.debug("Error updating bookshelf model: ", e);
         }
@@ -135,11 +137,13 @@ public class BookshelfDoorBlockEntity extends LockableBlockEntity implements Min
 
     @Override
     protected void createGui(ServerPlayerEntity player) {
-        new Gui(player);
+        new Gui(player).open();
     }
 
     void setOpen(BlockState state, boolean open) {
-        this.world.setBlockState(this.getPos(), state.with(BookshelfDoorBlock.OPEN, open), 3);
+        if (this.world != null) {
+            this.world.setBlockState(this.getPos(), state.with(BookshelfDoorBlock.OPEN, open), 3);
+        }
     }
 
     void playSound(BlockState state, SoundEvent soundEvent) {
@@ -155,9 +159,8 @@ public class BookshelfDoorBlockEntity extends LockableBlockEntity implements Min
             super(ScreenHandlerType.GENERIC_9X3, player, false);
             this.setTitle(Text.translatable("container.storagedelight.bookshelf_door"));
             for (int i = 0; i < 27; i++) {
-                this.setSlotRedirect(i, new LedgerSlot(pos, player, BookshelfDoorBlockEntity.this, 1, 1, i));
+                this.setSlotRedirect(i, new LedgerSlot(pos, player, BookshelfDoorBlockEntity.this, i, 1, 1));
             }
-            this.open();
         }
 
         @Override
