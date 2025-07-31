@@ -17,7 +17,7 @@ public class StorageDelightPort implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		BlockRegistry.registerBlocks();
+		BlockRegistry.registerModBlocks();
 		BlockEntityTypesRegistry.register();
 		FlammableRegistry.registerFlammable();
 		if (PolymerResourcePackUtils.addModAssets(MOD_ID)) {

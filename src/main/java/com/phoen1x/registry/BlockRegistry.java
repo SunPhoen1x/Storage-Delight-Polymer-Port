@@ -223,11 +223,10 @@ public class BlockRegistry {
     public static final Block WARPED_SINGLE_DOOR_CABINET = registerBlock("warped_single_door_cabinet", CabinetVariantBlock::new, Block.Settings.copy(Blocks.BARREL));
     public static final BlockItem WARPED_SINGLE_DOOR_CABINET_ITEM = registerBlockItem("warped_single_door_cabinet", settings -> new TexturedPolyBlockItem(WARPED_SINGLE_DOOR_CABINET, settings), new Item.Settings());
 
-    public static void registerBlocks() {
+    public static void registerModBlocks() {
         ItemGroup.Builder builder = PolymerItemGroupUtils.builder();
         builder.icon(() -> new ItemStack(BlockRegistry.OAK_DRAWER_ITEM, 1));
         builder.displayName(Text.translatable("itemGroup.storagedelight"));
-
         builder.entries((displayContext, entries) -> {
             entries.add(BlockRegistry.OAK_DRAWER_ITEM);
             entries.add(BlockRegistry.OAK_DRAWER_WITH_DOOR_ITEM);
