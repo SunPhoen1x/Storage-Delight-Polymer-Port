@@ -16,7 +16,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -45,7 +44,7 @@ public class DrawerDoorBlockEntity extends LockableBlockEntity implements Minima
     private DrawerDoorBlock.Model model;
 
     public DrawerDoorBlockEntity(BlockPos pos, BlockState state) {
-        super(BlockEntityTypesRegistry.DRAWER_DOOR, pos, state);
+        super(ModEntities.DRAWER_DOOR, pos, state);
     }
 
     @Override

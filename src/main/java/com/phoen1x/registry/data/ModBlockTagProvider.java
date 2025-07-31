@@ -7,7 +7,7 @@ import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
 
-import static com.phoen1x.registry.BlockRegistry.*;
+import static com.phoen1x.registry.ModBlocks.*;
 
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 

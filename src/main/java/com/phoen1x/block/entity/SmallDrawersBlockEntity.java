@@ -16,7 +16,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -45,7 +44,7 @@ public class SmallDrawersBlockEntity extends LockableBlockEntity implements Mini
     private SmallDrawersBlock.Model model;
 
     public SmallDrawersBlockEntity(BlockPos pos, BlockState state) {
-        super(BlockEntityTypesRegistry.SMALL_DRAWERS, pos, state);
+        super(ModEntities.SMALL_DRAWERS, pos, state);
     }
 
     @Override

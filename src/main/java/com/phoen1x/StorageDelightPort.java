@@ -1,7 +1,7 @@
 package com.phoen1x;
 
-import com.phoen1x.registry.BlockEntityTypesRegistry;
-import com.phoen1x.registry.BlockRegistry;
+import com.phoen1x.registry.ModEntities;
+import com.phoen1x.registry.ModBlocks;
 import com.phoen1x.registry.FlammableRegistry;
 import net.fabricmc.api.ModInitializer;
 
@@ -17,8 +17,8 @@ public class StorageDelightPort implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		BlockRegistry.registerModBlocks();
-		BlockEntityTypesRegistry.register();
+		ModBlocks.registerModBlocks();
+		ModEntities.register();
 		FlammableRegistry.registerFlammable();
 		if (PolymerResourcePackUtils.addModAssets(MOD_ID)) {
 			ResourcePackExtras.forDefault().addBridgedModelsFolder(id("block"), id("sgui"));

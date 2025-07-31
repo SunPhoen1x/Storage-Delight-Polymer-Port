@@ -16,7 +16,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -45,7 +44,7 @@ public class GlassCabinetBlockEntity extends LockableBlockEntity implements Mini
     private GlassCabinetBlock.Model model;
 
     public GlassCabinetBlockEntity(BlockPos pos, BlockState state) {
-        super(BlockEntityTypesRegistry.GLASS_CABINET, pos, state);
+        super(ModEntities.GLASS_CABINET, pos, state);
     }
 
     @Override

@@ -43,7 +43,7 @@ public class BookshelfDoorBlockEntity extends LockableBlockEntity implements Min
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
 
     public BookshelfDoorBlockEntity(BlockPos pos, BlockState state) {
-        super(BlockEntityTypesRegistry.BOOKSHELF_DOOR, pos, state);
+        super(ModEntities.BOOKSHELF_DOOR, pos, state);
     }
 
     @Override

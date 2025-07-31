@@ -3,7 +3,6 @@ package com.phoen1x.block;
 import com.mojang.serialization.MapCodec;
 import com.phoen1x.StorageDelightPort;
 import com.phoen1x.block.entity.BookshelfDoorBlockEntity;
-import com.phoen1x.registry.BlockRegistry;
 import eu.pb4.factorytools.api.block.FactoryBlock;
 import eu.pb4.factorytools.api.virtualentity.BlockModel;
 import eu.pb4.factorytools.api.virtualentity.ItemDisplayElementUtil;
